@@ -1,0 +1,2 @@
+usuario: user
+contraseña de spring security: abfe2bb4-347a-4cb7-98a7-61f7416bab03
