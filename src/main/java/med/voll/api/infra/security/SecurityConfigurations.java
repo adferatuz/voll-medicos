@@ -34,6 +34,7 @@ public class SecurityConfigurations {
                                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/pacientes").hasRole("USER")
                                 .requestMatchers(HttpMethod.POST, "/consultas").hasRole("USER")
+                                .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                                 .anyRequest()
                                 .authenticated()
 

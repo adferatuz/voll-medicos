@@ -1,4 +1,4 @@
-package med.voll.api.domain.usuarios.dto;
+package med.voll.api.domain.modelos.usuarios.dto;
 
 public record DatosAutenticacionUsuarios(
 

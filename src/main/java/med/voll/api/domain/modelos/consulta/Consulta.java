@@ -9,6 +9,7 @@ import med.voll.api.domain.modelos.medico.Medico;
 import med.voll.api.domain.modelos.paciente.Paciente;
 
 import java.time.LocalDateTime;
+import java.time.temporal.Temporal;
 
 @Entity(name = "Consulta")
 @Table(name = "consultas")
@@ -29,9 +30,19 @@ public class Consulta {
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamiento motivoCancelamiento;
+
     private LocalDateTime datetime;
 
-    public Consulta(Object o, Medico medico, Paciente paciente, LocalDateTime fecha) {
+    public Consulta(Medico medico, Paciente paciente, LocalDateTime datetime) {
+        this.medico = medico;
+        this.paciente = paciente;
+        this.datetime = datetime;
+    }
+
+    public void cancelar(MotivoCancelamiento motivo) {
+        this.motivoCancelamiento = motivo;
     }
 
     public Long getId() {
@@ -49,4 +60,23 @@ public class Consulta {
     public void setData(LocalDateTime data) {
         this.datetime = data;
     }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+
+
 }

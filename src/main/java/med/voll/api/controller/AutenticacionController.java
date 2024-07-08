@@ -1,10 +1,11 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.infra.security.DatosJWTToken;
 import med.voll.api.infra.security.TokenService;
-import med.voll.api.domain.usuarios.Usuario;
-import med.voll.api.domain.usuarios.dto.DatosAutenticacionUsuarios;
+import med.voll.api.domain.modelos.usuarios.Usuario;
+import med.voll.api.domain.modelos.usuarios.dto.DatosAutenticacionUsuarios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
